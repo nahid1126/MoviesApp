@@ -12,5 +12,5 @@ import dagger.hilt.android.components.ViewModelComponent
 abstract class RepositoryProvider {
     @Binds
     @MoviesApiQualifier
-    abstract fun bindTweetsRepository(moviesRepositoryImpl: MoviesRepositoryImpl)
+    abstract fun bindMoviesRepository(moviesRepositoryImpl: MoviesRepositoryImpl)
 }
