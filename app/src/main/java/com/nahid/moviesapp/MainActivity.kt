@@ -11,9 +11,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.ViewModelProvider
 import com.nahid.moviesapp.ui.theme.MoviesAppTheme
+import com.nahid.moviesapp.view_models.MoviesViewModel
 
 class MainActivity : ComponentActivity() {
+    private lateinit var moviesViewModel: MoviesViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

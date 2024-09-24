@@ -1,6 +1,7 @@
 package com.nahid.moviesapp.di
 
 import com.nahid.moviesapp.di.qualifier.MoviesApiQualifier
+import com.nahid.moviesapp.model.repository.MoviesRepository
 import com.nahid.moviesapp.model.repository.MoviesRepositoryImpl
 import dagger.Binds
 import dagger.Module
@@ -12,5 +13,5 @@ import dagger.hilt.android.components.ViewModelComponent
 abstract class RepositoryProvider {
     @Binds
     @MoviesApiQualifier
-    abstract fun bindMoviesRepository(moviesRepositoryImpl: MoviesRepositoryImpl)
+    abstract fun bindMoviesRepository(moviesRepositoryImpl: MoviesRepositoryImpl):MoviesRepository
 }
