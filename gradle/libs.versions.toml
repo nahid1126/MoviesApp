@@ -21,6 +21,8 @@ room-version = "2.6.1"
 coil-version = "2.4.0"
 icon-version = "1.5.4"
 ui-controller = "0.27.0"
+paging-version = "3.3.2"
+per-version = "1.7.20"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -77,7 +79,11 @@ coil = { module = "io.coil-kt:coil-compose", version.ref = "coil-version" }
 extendet-icons = { module = "androidx.compose.material:material-icons-extended", version.ref = "icon-version" }
 
 #system ui controllar
-ui-controllar = { module = "com.google.accompanist:accompanist-systemuicontrollar", version.ref = "ui-controller" }
+ui-controllar = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "ui-controller" }
+
+#paging
+paging = { module = "androidx.paging:paging-runtime", version.ref = "paging-version" }
+paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging-version" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -86,4 +92,5 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt_version" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "per-version" }
 

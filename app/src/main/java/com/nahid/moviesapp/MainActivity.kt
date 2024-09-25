@@ -1,11 +1,11 @@
 package com.nahid.moviesapp
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -16,6 +16,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -25,7 +26,6 @@ import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.nahid.moviesapp.model.data.Movies
 import com.nahid.moviesapp.ui.theme.MoviesAppTheme
-import com.nahid.moviesapp.utils.isNetworkAvailable
 import com.nahid.moviesapp.view_models.MoviesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -65,7 +65,16 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         moviesResponse.apply {
             when {
                 loadState.append is LoadState.Loading -> {
-                    item { CircularProgressIndicator() }
+                    item {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            CircularProgressIndicator(modifier = Modifier.padding(20.dp))
+                        }
+                    }
                 }
 
                 loadState.append is LoadState.NotLoading && loadState.append.endOfPaginationReached -> {
