@@ -1,19 +1,22 @@
 package com.nahid.moviesapp.model.data
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 @Entity
+@Parcelize
 data class Movies(
     @PrimaryKey
     @SerializedName("id")
     val id: Int,
-    var category: String,
+    var category: String?,
     @SerializedName("adult")
     val adult: Boolean,
     @SerializedName("backdrop_path")
-    val backdropPath: String,
+    val backdropPath: String?,
     @SerializedName("original_language")
     val originalLanguage: String,
     @SerializedName("original_title")
@@ -34,4 +37,4 @@ data class Movies(
     val voteAverage: Double,
     @SerializedName("vote_count")
     val voteCount: Int
-)
+):Parcelable

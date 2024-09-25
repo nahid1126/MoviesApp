@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.parcelize)
 }
 
 android {
@@ -92,4 +93,7 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.extendet.icons)
     implementation(libs.ui.controllar)
+
+    implementation(libs.paging)
+    implementation(libs.paging.compose)
 }
