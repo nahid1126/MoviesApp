@@ -30,15 +30,15 @@ class MoviesPagingSource(
         return try {
             val page = params.key ?: 1
             val response = apiInterface.getMoviesList(Constants.AUTH, category, page)
-            if (!response.isSuccessful) {
-                throw IOException("Failed :${response.message()} ${response.code()}")
-            } else {
+            if (response.isSuccessful) {
                 val mainData = response.body()!!.results
                 LoadResult.Page(
                     data = mainData,
                     prevKey = if (page == 0) null else page - 1,
                     nextKey = if (mainData.isEmpty()) null else page + 1
                 )
+            } else {
+                throw IOException("Failed :${response.message()} ${response.code()}")
             }
 
         } catch (e: Exception) {

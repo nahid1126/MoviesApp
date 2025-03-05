@@ -8,6 +8,7 @@ import retrofit2.http.Header
 import retrofit2.http.Path
 import retrofit2.http.Query
 
+
 interface ApiInterface {
     @GET("{category}")
     suspend fun getMoviesList(
@@ -17,3 +18,4 @@ interface ApiInterface {
         @Query("api_key") apiKey: String = Constants.API_KEY
     ): Response<MoviesList>
 }
+

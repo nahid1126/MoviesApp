@@ -1,5 +1,6 @@
 package com.nahid.moviesapp.di
 
+
 import com.google.gson.GsonBuilder
 import com.nahid.moviesapp.BuildConfig
 import com.nahid.moviesapp.model.networks.ApiInterface
